@@ -11,13 +11,16 @@ line should not be printed.
 exception was thrown, this should be the original string.*/
 
 function reverseString(s) {
-    return s.split("").reverse().join("");
+    try {
+        let str = s.split("").reverse().join("");  
+        console.log(str);
+    } catch(err) {
+        console.log(err.message);
+        console.log(s);
+    } 
 }
-let str = "Yerevan"; 
-// let str = 123456;
-try {
-    console.log(reverseString(str));  
-} catch(err) {
-    console.log(err.message);
-    console.log(str);
-}
+reverseString("Yerevan");
+// reverseString(123456);
+
+
+
